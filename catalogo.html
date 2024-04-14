@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Tours</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('images/fondo_catalogo.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: #333;
+        }
+
+        header {
+            background-color: #2ecc71;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        section {
+            background-color: rgba(255, 255, 255, 0.9);
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 940px;
+        }
+
+        h2 {
+            color: #2ecc71;
+        }
+
+        h3 {
+            color: #3498db;
+        }
+
+        ul {
+            padding: 0;
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        #tour-details img {
+            max-width: 100%;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        #tour-photos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #tour-photos img {
+            width: 350px;
+            height: 200px;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Catálogo de Tours</h1>
+    </header>
+    <section id="tour-details">
+        <h2>Tour por la Ciudad</h2>
+        <p><strong>Descripción:</strong> Explora los lugares más emblemáticos de la ciudad en este tour de un día.</p>
+        <p><strong>Duración:</strong> 1 día</p>
+        <p><strong>Lugares destacados:</strong> Museo de Arte, Plaza Principal, Barrio Histórico</p>
+        <p><strong>Precio:</strong> $100</p>
+        <p><strong>Fechas disponibles:</strong> 10 de abril 2024, 17 de abril 2024, 24 de abril 2024</p>
+        <p><strong>Nivel de dificultad:</strong> Fácil</p>
+        <p><strong>Transporte:</strong> Autobús turístico</p>
+        <p><strong>Alojamiento:</strong> No incluido</p>
+        <p><strong>Comidas:</strong> Almuerzo incluido</p>
+        <p><strong>Guías turísticos:</strong> Guías expertos locales</p>
+        <p><strong>Políticas:</strong> Cancelación gratuita hasta 48 horas antes del tour</p>
+        <p><strong>Requisitos de visado:</strong> Depende del país de origen</p>
+        <p><strong>Testimonios:</strong></p>
+        <ul>
+            <li>¡Increíble experiencia!</li>
+            <li>Muy recomendado</li>
+        </ul>
+        <p><strong>Contacto:</strong> contact@example.com</p>
+        <h3>Fotos del Tour</h3>
+        <div id="tour-photos">
+            <img src="images/plaza.jpeg" alt="Tour photo">
+            <img src="images/bellas_artes.jpeg" alt="Tour photo">
+            <img src="images/barrio.jpeg" alt="Tour photo">
+        </div>
+    </section>
+    <section id="tour-list">
+        <h2>Tours Disponibles</h2>
+        <ul>
+            <li>Tour por la Ciudad</li>
+            <li>Excursión de Aventura</li>
+        </ul>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tours = [
+                {
+                    id: 1,
+                    name: 'Tour por la Ciudad',
+                    description: 'Explora los lugares más emblemáticos de la ciudad en este tour de un día.',
+                    duration: '1 día',
+                    highlights: ['Museo de Arte', 'Plaza Principal', 'Barrio Histórico'],
+                    price: '$100',
+                    dates: ['10 de abril 2024', '17 de abril 2024', '24 de abril 2024'],
+                    difficulty: 'Fácil',
+                    transportation: 'Autobús turístico',
+                    accommodation: 'No incluido',
+                    meals: 'Almuerzo incluido',
+                    guides: 'Guías expertos locales',
+                    policies: 'Cancelación gratuita hasta 48 horas antes del tour',
+                    visaRequirements: 'Depende del país de origen',
+                    testimonials: ['¡Increíble experiencia!', 'Muy recomendado'],
+                    photos: ['city-tour-1.jpg', 'city-tour-2.jpg'],
+                    contact: 'contact@example.com'
+                },
+                // Otros tours...
+            ];
+
+            const tourList = document.getElementById('tour-list');
+            const tourDetails = document.getElementById('tour-details');
+
+            // Función para mostrar los detalles del tour seleccionado
+            function showTourDetails(tour) {
+                tourDetails.innerHTML = `
+                    <h2>${tour.name}</h2>
+                    <p><strong>Descripción:</strong> ${tour.description}</p>
+                    <p><strong>Duración:</strong> ${tour.duration}</p>
+                    <p><strong>Lugares destacados:</strong> ${tour.highlights.join(', ')}</p>
+                    <p><strong>Precio:</strong> ${tour.price}</p>
+                    <p><strong>Fechas disponibles:</strong> ${tour.dates.join(', ')}</p>
+                    <p><strong>Nivel de dificultad:</strong> ${tour.difficulty}</p>
+                    <p><strong>Transporte:</strong> ${tour.transportation}</p>
+                    <p><strong>Alojamiento:</strong> ${tour.accommodation}</p>
+                    <p><strong>Comidas:</strong> ${tour.meals}</p>
+                    <p><strong>Guías turísticos:</strong> ${tour.guides}</p>
+                    <p><strong>Políticas:</strong> ${tour.policies}</p>
+                    <p><strong>Requisitos de visado:</strong> ${tour.visaRequirements}</p>
+                    <p><strong>Testimonios:</strong></p>
+                    <ul>
+                        ${tour.testimonials.map(testimonial => `<li>${testimonial}</li>`).join('')}
+                    </ul>
+                    <p><strong>Contacto:</strong> ${tour.contact}</p>
+                `;
+
+                // Mostrar fotos del tour
+                tourDetails.innerHTML += `
+                    <h3>Fotos del Tour</h3>
+                    <div id="tour-photos">
+                        ${tour.photos.map(photo => `<img src="${photo}" alt="Tour photo">`).join('')}
+                    </div>
+                `;
+            }
+
+            // Función para mostrar la lista de tours disponibles
+            function showTourList() {
+                tourList.innerHTML = '<h2>Tours Disponibles</h2><ul>';
+
+                tours.forEach(tour => {
+                    const li = document.createElement('li');
+                    li.textContent = tour.name;
+                    li.addEventListener('click', () => showTourDetails(tour));
+                    tourList.appendChild(li);
+                });
+
+                tourList.innerHTML += '</ul>';
+            }
+
+            // Mostrar la lista de tours al cargar la página
+            showTourList();
+        });
+    </script>
+</body>
+
+</html> 

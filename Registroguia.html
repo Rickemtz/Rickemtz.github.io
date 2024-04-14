@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de guía</title>
+    <style>
+        /* Paleta de colores */
+        :root {
+            --color-primario: #4CAF50; /* Verde */
+            --color-fondo: #f2f2f2; /* Gris claro */
+            --color-borde: #ddd; /* Gris */
+            --color-boton: #4CAF50; /* Verde */
+            --color-boton-hover: #45a049; /* Verde oscuro */
+            --color-texto: #333; /* Negro */
+            --color-texto-boton: #fff; /* Blanco */
+            --imagen-fondo-pagina: url('images/fondo_login.jpeg'); /* URL de la imagen de fondo del formulario */
+            --imagen-fondo-formulario: #8fd7b7; /* Color de fondo del formulario */
+        }
+
+        /* Estilo para el cuerpo de la página */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: var(--imagen-fondo-pagina); /* Imagen de fondo de la página */
+            background-size: cover;
+            background-position: center;
+            color: var(--color-texto);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Estilo para el formulario */
+        form {
+            width: 400px; /* Ancho del formulario */
+            padding: 20px;
+            border: 1px solid var(--color-borde);
+            border-radius: 5px;
+            background-color: var(--imagen-fondo-formulario); /* Color de fondo del formulario */
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Estilo para los contenedores de cada campo */
+        div {
+            margin-bottom: 10px;
+        }
+
+        /* Estilo para las etiquetas */
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        /* Estilo para los campos de entrada */
+        input[type="text"],
+        input[type="email"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--color-borde);
+            border-radius: 5px;
+            box-sizing: border-box;
+            /* Garantiza que el padding no afecte al ancho */
+        }
+
+        /* Estilo para el botón de enviar */
+        input[type="button"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: var(--color-boton);
+            color: var(--color-texto-boton);
+            cursor: pointer;
+        }
+
+        /* Estilo para el botón de enviar al pasar el ratón */
+        input[type="button"]:hover {
+            background-color: var(--color-boton-hover);
+        }
+    </style>
+</head>
+
+<body>
+    <form action="coneccionregistroguia.php" method="get">
+        <div>
+            <label name="Nombre" for="">Nombre: </label>
+            <input type="text" id="Nombre" name="nombre" required>
+        </div>
+        <div>
+            <label name="Correo" for="">Correo</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label name="telefono" for="">Teléfono: </label>
+            <input type="number" id="telefono" name="telefono" required>
+        </div>
+        <div>
+            <label name="from" for="">¿De dónde eres?</label>
+            <input type="text" id="from" name="from" required>
+        </div>
+        <div>
+            <label name="Nombre" for="">Formación y carreras afines al turismo</label>
+            <input type="text" id="carrera" name="carrera" required>
+        </div>
+        <div>
+            <label name="formacion" for="">Capacitación y formación especial</label>
+            <input type="text" id="Capacitacion" name="Capacitacion" required>
+        </div>
+        <input type="button" value="Enviar">
+    </form>
+</body>
+
+</html>
